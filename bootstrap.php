@@ -14,8 +14,25 @@ $engine->route('/login', function() {
     $request = Request::get();
     $user = $request->input('username');
     $pwd = $request->input('password');
+    $sql = "select * from users where name = :name and password = :pwd";
+    $stat = DB::get()->prepare($sql);
+    $stat->execute(['name'=>$user, 'pwd'=>$pwd]);
+    $res = $stat->fetch(PDO::FETCH_ASSOC);
+    if ($res) {
+        session_start();
+        $_SESSION['user'] = $res;
+    } else {
+        $res = [];
+    }
     $response = Response::get();
-    $response->addData('user', $user)->addData('password', $pwd);
+    $response->setData($res);
+    return $response;
+});
+$engine->route('/is_login', function () {
+    session_start();
+    $user = isset($_SESSION['user']) ? $_SESSION['user'] : [];
+    $response = Response::get();
+    $response->setData($user);
     return $response;
 });
 $engine->route('/logout', function() {

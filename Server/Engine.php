@@ -43,7 +43,7 @@ class Engine
     {
         try {
             $request = Request::get();
-//            $db = DB::get($this->config);
+            $db = DB::get($this->config);
             if (isset($this->routes[$request->url])) {
                 $callback = $this->routes[$request->url];
                 if (is_callable($callback)) {

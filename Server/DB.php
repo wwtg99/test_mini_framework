@@ -18,7 +18,7 @@ class DB
 
     /**
      * @param array $config
-     * @return Request
+     * @return DB
      */
     public static function get($config = [])
     {
@@ -49,6 +49,15 @@ class DB
     {
         $stat = $this->pdo->query($sql, PDO::FETCH_ASSOC);
         return $stat->fetchAll();
+    }
+
+    /**
+     * @param $sql
+     * @return PDOStatement
+     */
+    public function prepare($sql)
+    {
+        return $this->pdo->prepare($sql);
     }
 
 }

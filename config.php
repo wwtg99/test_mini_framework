@@ -9,7 +9,7 @@
 return [
     'driver'=>'mysql',
     'dbname'=>'test',
-    'host'=>'192.168.83.128',
-    'user'=>'root',
-    'password'=>'1'
+    'host'=>'192.168.0.21',
+    'user'=>'wwu',
+    'password'=>'genowise'
 ];

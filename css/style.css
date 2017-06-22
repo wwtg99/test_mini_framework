@@ -7,3 +7,70 @@
 .container h1 {
     text-align: center;
 }
+
+.navbar {
+    border: solid 1px #999999;
+    height: 50px;
+    text-align: center;
+}
+
+.navbar .nav-left {
+    float: left;
+}
+
+.navbar .nav-right {
+    float: right;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    float: left;
+}
+
+.navbar a, .navbar a:visited, .navbar a:link, .navbar a:active {
+    text-decoration: none;
+}
+
+.navbar ul li {
+    float: left;
+    width: 60px;
+    line-height: 40px;
+    background-color: #999999;
+    position: relative;
+}
+
+.navbar ul li a {
+    display: block;
+    color: #666;
+}
+
+.navbar ul li a:hover {
+    color: #000;
+}
+
+.navbar .dropdown:hover {
+    background-color: darkred;
+}
+
+.navbar .dropdown:hover a {
+    color: white;
+}
+
+.navbar .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.navbar .dropdown .dropdown-menu {
+    display: none;
+    width: 90px;
+}
+
+.navbar .dropdown .dropdown-menu li {
+    width: 100px;
+}
+
+.navbar .dropdown .dropdown-menu li a:hover{
+    color: #777;
+}
